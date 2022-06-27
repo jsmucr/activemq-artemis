@@ -509,6 +509,17 @@
              <!-- License: Apache 2.0 -->
          </dependency>
 
+         <!-- ## Examples Dependencies ## -->
+         <dependency>
+             <groupId>org.slf4j</groupId>
+             <artifactId>slf4j-simple</artifactId>
+             <version>${slf4j.version}</version>
+         </dependency>
+         <dependency>
+             <groupId>org.slf4j</groupId>
+             <artifactId>slf4j-nop</artifactId>
+             <version>${slf4j.version}</version>
+         </dependency>
          <!-- ## End Examples Dependencies ## -->
 
          <!-- ### START opentelemetry Dependencies ### -->
