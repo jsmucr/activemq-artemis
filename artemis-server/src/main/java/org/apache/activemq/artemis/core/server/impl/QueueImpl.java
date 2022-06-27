@@ -3715,7 +3715,7 @@ public class QueueImpl extends CriticalComponentImpl implements Queue {
       if (isAutoCreate && !getAddress().equals(destinationAddress)) {
          if (destinationAddress != null && destinationAddress.length() != 0) {
             SimpleString destinationQueueName = prefix.concat(getAddress()).concat(suffix);
-            SimpleString filter = new SimpleString(String.format("{} = '{}'", Message.HDR_ORIGINAL_ADDRESS, getAddress()));
+            SimpleString filter = new SimpleString(String.format("%s = '%s'", Message.HDR_ORIGINAL_ADDRESS, getAddress()));
             try {
                server.createQueue(new QueueConfiguration(destinationQueueName).setAddress(destinationAddress).setFilterString(filter).setAutoCreated(true).setAutoCreateAddress(true), true);
             } catch (ActiveMQQueueExistsException e) {
