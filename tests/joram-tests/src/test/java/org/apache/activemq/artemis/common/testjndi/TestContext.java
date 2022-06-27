@@ -37,7 +37,6 @@ import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Map;
 
-import org.apache.activemq.artemis.core.client.ActiveMQClientLogger;
 import org.apache.activemq.artemis.jndi.NameParserImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

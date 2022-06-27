@@ -41,7 +41,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class ConsumersResource implements TimeoutTask.Callback {
-   
+
    private static final Logger logger = LoggerFactory.getLogger( ConsumersResource.class );
 
    protected ConcurrentMap<String, QueueConsumer> queueConsumers = new ConcurrentHashMap<>();

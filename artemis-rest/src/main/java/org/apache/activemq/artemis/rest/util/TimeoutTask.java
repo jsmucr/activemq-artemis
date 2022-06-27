@@ -23,7 +23,6 @@ import java.util.Map;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import org.apache.activemq.artemis.rest.ActiveMQRestLogger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

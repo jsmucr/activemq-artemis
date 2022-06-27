@@ -22,7 +22,6 @@ import org.apache.activemq.artemis.api.core.Message;
 import org.apache.activemq.artemis.api.core.SimpleString;
 import org.apache.activemq.artemis.api.core.client.ClientMessage;
 import org.apache.activemq.artemis.jms.client.ConnectionFactoryOptions;
-import org.apache.activemq.artemis.rest.ActiveMQRestLogger;
 import org.apache.activemq.artemis.rest.HttpHeaderProperty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

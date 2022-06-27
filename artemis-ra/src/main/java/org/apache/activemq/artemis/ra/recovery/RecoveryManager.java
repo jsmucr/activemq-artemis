@@ -21,7 +21,6 @@ import java.util.ServiceLoader;
 import java.util.Set;
 
 import org.apache.activemq.artemis.jms.client.ActiveMQConnectionFactory;
-import org.apache.activemq.artemis.ra.ActiveMQRALogger;
 import org.apache.activemq.artemis.service.extensions.xa.recovery.ActiveMQRegistry;
 import org.apache.activemq.artemis.service.extensions.xa.recovery.ActiveMQRegistryImpl;
 import org.apache.activemq.artemis.service.extensions.xa.recovery.XARecoveryConfig;

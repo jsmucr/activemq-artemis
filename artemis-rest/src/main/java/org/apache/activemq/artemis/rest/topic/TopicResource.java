@@ -28,7 +28,6 @@ import javax.ws.rs.core.UriInfo;
 
 import org.apache.activemq.artemis.api.core.SimpleString;
 import org.apache.activemq.artemis.api.core.client.ClientSession;
-import org.apache.activemq.artemis.rest.ActiveMQRestLogger;
 import org.apache.activemq.artemis.rest.queue.DestinationResource;
 import org.apache.activemq.artemis.rest.queue.PostMessage;
 import org.slf4j.Logger;

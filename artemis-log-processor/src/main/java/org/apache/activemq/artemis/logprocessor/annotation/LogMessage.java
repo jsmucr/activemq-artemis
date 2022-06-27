@@ -37,7 +37,7 @@ public @interface LogMessage {
       // TODO DEBUG and TRACE will be removed.
         @Deprecated DEBUG, @Deprecated TRACE;
 
-      private Level() {
+      Level() {
       }
    }
 

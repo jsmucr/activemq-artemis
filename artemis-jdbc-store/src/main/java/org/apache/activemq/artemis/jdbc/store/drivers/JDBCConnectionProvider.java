@@ -25,7 +25,6 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.apache.activemq.artemis.jdbc.store.logging.LoggingConnection;
 import org.apache.activemq.artemis.jdbc.store.sql.PropertySQLProvider;
-import org.apache.activemq.artemis.journal.ActiveMQJournalLogger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

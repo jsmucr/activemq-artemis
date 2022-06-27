@@ -23,7 +23,6 @@ import io.netty.util.internal.PlatformDependent;
 import org.apache.activemq.artemis.api.core.ActiveMQBuffer;
 import org.apache.activemq.artemis.api.core.SimpleString;
 import org.apache.activemq.artemis.logs.ActiveMQUtilBundle;
-import org.apache.activemq.artemis.logs.ActiveMQUtilLogger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

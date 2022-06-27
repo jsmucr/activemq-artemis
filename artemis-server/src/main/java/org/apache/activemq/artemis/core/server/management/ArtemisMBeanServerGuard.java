@@ -17,7 +17,6 @@
 package org.apache.activemq.artemis.core.server.management;
 
 
-import org.apache.activemq.artemis.core.server.ActiveMQServerLogger;
 import org.apache.activemq.artemis.logs.AuditLogger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

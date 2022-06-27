@@ -33,7 +33,6 @@ import org.apache.activemq.artemis.core.config.FileDeploymentManager;
 import org.apache.activemq.artemis.core.config.impl.FileConfiguration;
 import org.apache.activemq.artemis.dto.BrokerDTO;
 import org.apache.activemq.artemis.dto.ManagementContextDTO;
-import org.apache.activemq.artemis.integration.bootstrap.ActiveMQBootstrapLogger;
 import org.apache.activemq.artemis.jms.server.config.impl.FileJMSConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -384,15 +384,15 @@ public class LogProcessor extends AbstractProcessor {
 
       switch (messageAnnotation.level()) {
          case WARN:
-            methodName="warn"; break;
+            methodName = "warn"; break;
          case INFO:
-            methodName="info"; break;
+            methodName = "info"; break;
          case ERROR:
-            methodName="error"; break;
+            methodName = "error"; break;
          case DEBUG: // TODO remove this
-            methodName="debug"; break;
+            methodName = "debug"; break;
          case TRACE: // TODO remove this
-            methodName="trace"; break;
+            methodName = "trace"; break;
          default:
             throw new IllegalStateException("illegal method level " + messageAnnotation.level());
       }

@@ -203,7 +203,7 @@ public class FloodServerWithAsyncSendTest extends SmokeTestBase {
 
          while (running) {
             if (++produced % 10 == 0) {
-               logger.info("{} produced {} messages", queueName ,produced);
+               logger.info("{} produced {} messages", queueName, produced);
             }
             producer.send(session.createTextMessage(randomString));
          }

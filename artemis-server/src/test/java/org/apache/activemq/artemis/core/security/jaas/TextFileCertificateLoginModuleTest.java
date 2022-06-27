@@ -29,7 +29,6 @@ import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 
-import org.apache.activemq.artemis.core.server.ActiveMQServerLogger;
 import org.apache.activemq.artemis.spi.core.security.jaas.CertificateCallback;
 import org.apache.activemq.artemis.spi.core.security.jaas.CertificateLoginModule;
 import org.apache.activemq.artemis.spi.core.security.jaas.JaasCallbackHandler;

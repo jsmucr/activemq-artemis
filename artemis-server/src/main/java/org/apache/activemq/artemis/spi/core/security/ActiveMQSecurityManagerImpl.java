@@ -23,7 +23,6 @@ import org.apache.activemq.artemis.core.config.impl.SecurityConfiguration;
 import org.apache.activemq.artemis.core.security.CheckType;
 import org.apache.activemq.artemis.core.security.Role;
 import org.apache.activemq.artemis.core.security.User;
-import org.apache.activemq.artemis.core.server.ActiveMQServerLogger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

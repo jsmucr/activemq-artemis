@@ -32,7 +32,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.activemq.artemis.api.core.SimpleString;
-import org.apache.activemq.artemis.logs.ActiveMQUtilLogger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

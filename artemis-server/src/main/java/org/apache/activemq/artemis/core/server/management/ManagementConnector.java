@@ -18,7 +18,6 @@ package org.apache.activemq.artemis.core.server.management;
 
 import org.apache.activemq.artemis.core.config.JMXConnectorConfiguration;
 import org.apache.activemq.artemis.core.server.ActiveMQComponent;
-import org.apache.activemq.artemis.core.server.ActiveMQServerLogger;
 import org.apache.activemq.artemis.spi.core.security.ActiveMQBasicSecurityManager;
 import org.apache.activemq.artemis.spi.core.security.ActiveMQSecurityManager;
 import org.slf4j.Logger;

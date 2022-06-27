@@ -446,9 +446,7 @@ public class AMQPMirrorControllerTarget extends ProtonAbstractReceiver implement
          duplicateIDCache = lruduplicateIDCache;
       } else {
          // we use the number of credits for the duplicate detection, as that means the maximum number of elements you can have pending
-         if (logger.isDebugEnabled()) {//TODO: mismatch between check and log level
-            logger.trace("Setting up duplicate detection cache on " + ProtonProtocolManager.MIRROR_ADDRESS + ", ServerID=" + internalMirrorID + " with " + connection.getAmqpCredits() + " elements, being the number of credits");
-         }
+         logger.trace("Setting up duplicate detection cache on {}, ServerID={} with {} elements, being the number of credits", ProtonProtocolManager.MIRROR_ADDRESS, internalMirrorID, connection.getAmqpCredits());
 
          lruDuplicateIDKey = internalMirrorID;
          lruduplicateIDCache = server.getPostOffice().getDuplicateIDCache(SimpleString.toSimpleString(ProtonProtocolManager.MIRROR_ADDRESS + "_" + internalMirrorID), connection.getAmqpCredits());

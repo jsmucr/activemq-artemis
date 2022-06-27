@@ -29,7 +29,6 @@ import java.net.URI;
 import org.apache.activemq.artemis.api.core.ActiveMQException;
 import org.apache.activemq.artemis.api.core.client.ClientMessage;
 import org.apache.activemq.artemis.api.core.client.ClientProducer;
-import org.apache.activemq.artemis.rest.ActiveMQRestLogger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

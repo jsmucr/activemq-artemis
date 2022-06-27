@@ -34,7 +34,7 @@ public class MirrorTransaction extends TransactionImpl {
    public MirrorTransaction(StorageManager storageManager) {
       super(storageManager);
       this.controlInUse = AMQPMirrorControllerTarget.getControllerInUse();
-      logger.debug("controlTarget = {} transactionID = {}", controlInUse , getID());
+      logger.debug("controlTarget = {} transactionID = {}", controlInUse, getID());
    }
 
    @Override

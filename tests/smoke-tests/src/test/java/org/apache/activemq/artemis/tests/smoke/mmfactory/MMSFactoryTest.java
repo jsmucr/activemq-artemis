@@ -228,7 +228,7 @@ public class MMSFactoryTest extends SmokeTestBase {
                   mmsFactory.send(message);
 
                   if (i % 10 == 0) {
-                     logger.debug("Sending {} run = {}" , i, run);
+                     logger.debug("Sending {} run = {}", i, run);
                   }
 
                   if (i == 0) {

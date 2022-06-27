@@ -57,7 +57,7 @@ public class AllClassesTest {
                      parameters.add(loadedClass);
                   }
                } catch (Throwable loadThrowable) {
-                  if(log.isDebugEnabled()) {
+                  if (log.isDebugEnabled()) {
                      log.debug("cannot load " + classInfo.getName() + ": " + loadThrowable);
                   }
                }
@@ -95,7 +95,7 @@ public class AllClassesTest {
 
       try {
          String targetOutput = targetInstance.toString();
-         log.debug("targetOutput: " + targetOutput);
+         log.debug("targetOutput: {}", targetOutput);
       } finally {
          if (targetInstance instanceof AutoCloseable) {
             try {
@@ -143,7 +143,7 @@ public class AllClassesTest {
          try {
             return targetConstructor.newInstance(initArgs.toArray());
          } catch (Throwable t) {
-            if(log.isDebugEnabled()) {
+            if (log.isDebugEnabled()) {
                log.debug("Cannot construct " + targetClass.getName() + ": " + t);
             }
          }
