@@ -217,6 +217,7 @@ public class LogProcessor extends AbstractProcessor {
       // This is really a debug output
       writerOutput.println("   // " + encodeSpecialChars(messageAnnotation.toString()));
 
+      writerOutput.println("   @Override");
       writerOutput.write("   public " + executableMember.getReturnType() + " " + executableMember.getSimpleName() + "(");
 
       Iterator<? extends VariableElement> parameters = executableMember.getParameters().iterator();
@@ -335,6 +336,7 @@ public class LogProcessor extends AbstractProcessor {
 
       // This is really a debug output
       writerOutput.println("   // " + loggerAnnotation.toString());
+      writerOutput.println("   @Override");
       writerOutput.println("   public Logger " + executableMember.getSimpleName() + "() { return logger; }");
       writerOutput.println();
    }
@@ -356,7 +358,7 @@ public class LogProcessor extends AbstractProcessor {
 
       // This is really a debug output
       writerOutput.println("   // " + encodeSpecialChars(messageAnnotation.toString()));
-
+      writerOutput.println("   @Override");
       writerOutput.write("   public void " + executableMember.getSimpleName() + "(");
 
       Iterator<? extends VariableElement> parameters = executableMember.getParameters().iterator();

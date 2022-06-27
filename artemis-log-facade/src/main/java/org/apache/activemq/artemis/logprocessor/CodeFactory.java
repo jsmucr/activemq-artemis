@@ -30,6 +30,7 @@ public class CodeFactory {
 
    public static <T> T getCodeClass(final Class<T> type, String category) {
       return doPrivileged(new PrivilegedAction<T>() {
+         @Override
          public T run() {
             try {
                String className = type.getName() + "_impl";
