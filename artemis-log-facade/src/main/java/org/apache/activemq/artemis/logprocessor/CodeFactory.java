@@ -24,9 +24,8 @@ import static java.security.AccessController.doPrivileged;
 
 public class CodeFactory {
 
-
    public static <T> T getCodeClass(final Class<T> type) {
-      return getCodeClass(type, type.getClass().getName());
+      return getCodeClass(type, type.getName());
    }
 
    public static <T> T getCodeClass(final Class<T> type, String category) {
