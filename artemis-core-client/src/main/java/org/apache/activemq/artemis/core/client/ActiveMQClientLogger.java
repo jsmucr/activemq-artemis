@@ -32,10 +32,7 @@ import org.w3c.dom.Node;
 @LogBundle(projectCode = "AMQ")
 public interface ActiveMQClientLogger {
 
-   /**
-    * The default logger.
-    */
-   ActiveMQClientLogger LOGGER = CodeFactory.getCodeClass(ActiveMQClientLogger.class);
+   ActiveMQClientLogger LOGGER = CodeFactory.getCodeClass(ActiveMQClientLogger.class, ActiveMQClientLogger.class.getPackage().getName());
 
    @LogMessage(id = 212001, value = "Error on clearing messages", level = LogMessage.Level.WARN)
    void errorClearingMessages(@Cause Throwable e);

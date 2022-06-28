@@ -27,7 +27,7 @@ import org.apache.activemq.artemis.logprocessor.annotation.LogMessage;
 @LogBundle(projectCode = "AMQ")
 public interface ActiveMQUtilLogger {
 
-   ActiveMQUtilLogger LOGGER = CodeFactory.getCodeClass(ActiveMQUtilLogger.class);
+   ActiveMQUtilLogger LOGGER = CodeFactory.getCodeClass(ActiveMQUtilLogger.class, ActiveMQUtilLogger.class.getPackage().getName());
 
    @LogMessage(id = 201000, value = "Network is healthy, starting service {}", level = LogMessage.Level.INFO)
    void startingService(String component);
