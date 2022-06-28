@@ -125,16 +125,6 @@ public class LogProcessor extends AbstractProcessor {
                writerOutput.println("   }");
                writerOutput.println();
 
-               writerOutput.println("   public " + simpleClassName + "() {");
-               writerOutput.println("      this(LoggerFactory.getLogger(" + fullClassName + ".class));");
-               writerOutput.println("   }");
-               writerOutput.println();
-
-
-               // Declaring the static field that's used by {@link I18NFactory}
-               writerOutput.println("   public static " + simpleClassName + " INSTANCE = new " + simpleClassName + "();");
-               writerOutput.println();
-
                for (Element el : annotatedType.getEnclosedElements()) {
                   if (el.getKind() == ElementKind.METHOD) {
 

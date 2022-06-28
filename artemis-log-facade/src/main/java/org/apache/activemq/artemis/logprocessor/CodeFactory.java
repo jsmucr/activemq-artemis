@@ -17,12 +17,17 @@
 
 package org.apache.activemq.artemis.logprocessor;
 
-import java.lang.reflect.Field;
+import java.lang.reflect.Constructor;
 import java.security.PrivilegedAction;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static java.security.AccessController.doPrivileged;
 
 public class CodeFactory {
+
+   private static final Logger logger = LoggerFactory.getLogger(CodeFactory.class);
 
    public static <T> T getCodeClass(final Class<T> type) {
       return getCodeClass(type, type.getName());
@@ -32,21 +37,30 @@ public class CodeFactory {
       return doPrivileged(new PrivilegedAction<T>() {
          @Override
          public T run() {
+            final String implClassName = type.getName() + "_impl";
+
+            logger.trace("Loading [{}]", implClassName);
+
+            final Class<? extends T> implClass;
             try {
-               String className = type.getName() + "_impl";
-               System.out.println("Loading [" + className + "]"); //TODO: remove or make Logger
-               Class<?> messageClass = Class.forName(className, true, type.getClassLoader()).asSubclass(type);
+               implClass = Class.forName(implClassName, true, type.getClassLoader()).asSubclass(type);
+            } catch (Exception e) {
+               throw new IllegalArgumentException("Unable to find class for log/message impl: " + implClassName, e);
+            }
 
-               Field field = messageClass.getField("INSTANCE");
+            final Constructor<? extends T> constructor;
+            try {
+               constructor = implClass.getConstructor(Logger.class);
+            } catch (Exception e) {
+               throw new IllegalArgumentException("Unable to find constructor for log/message impl: " + implClassName, e);
+            }
 
-               return type.cast(field.get(null));
-            } catch (ClassNotFoundException e) {
-               return null;
-            } catch (NoSuchFieldException e) {
-               throw new IllegalStateException(e.getMessage(), e);
-            } catch (IllegalAccessException e) {
-               e.printStackTrace();
-               throw new IllegalStateException(e.getMessage(), e);
+            try {
+               Logger logger = LoggerFactory.getLogger(category);
+
+               return type.cast(constructor.newInstance(logger));
+            } catch (Exception e) {
+               throw new IllegalArgumentException("Unable to create instance for log/message impl: " + implClassName, e);
             }
          }
       });
