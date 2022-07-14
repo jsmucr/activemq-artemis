@@ -16,6 +16,11 @@
  */
 package org.apache.activemq.artemis.quorum.file;
 
+import org.apache.activemq.artemis.quorum.DistributedLock;
+import org.apache.activemq.artemis.quorum.DistributedPrimitiveManager;
+import org.apache.activemq.artemis.quorum.MutableLong;
+import org.apache.activemq.artemis.quorum.UnavailableStateException;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -25,11 +30,6 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
-
-import org.apache.activemq.artemis.quorum.DistributedLock;
-import org.apache.activemq.artemis.quorum.DistributedPrimitiveManager;
-import org.apache.activemq.artemis.quorum.MutableLong;
-import org.apache.activemq.artemis.quorum.UnavailableStateException;
 
 /**
  * This is an implementation suitable to be used just on unit tests and it won't attempt
@@ -131,7 +131,7 @@ public class FileBasedPrimitiveManager implements DistributedPrimitiveManager {
    @Override
    public MutableLong getMutableLong(final String mutableLongId) throws ExecutionException {
       // use a lock file - but with a prefix
-      final FileDistributedLock fileDistributedLock = (FileDistributedLock) getDistributedLock("ML:" + mutableLongId);
+      final FileDistributedLock fileDistributedLock = (FileDistributedLock) getDistributedLock("ML-" + mutableLongId);
       return new MutableLong() {
          @Override
          public String getMutableLongId() {
