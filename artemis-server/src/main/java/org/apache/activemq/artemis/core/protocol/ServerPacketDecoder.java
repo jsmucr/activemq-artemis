@@ -222,7 +222,7 @@ public class ServerPacketDecoder extends ClientPacketDecoder {
             break;
          }
          case PacketImpl.REPLICATION_START_FINISH_SYNC: {
-            packet = new ReplicationStartSyncMessage();
+            packet = new ReplicationStartSyncMessage(connection.isBeforeTwoEighteen());
             break;
          }
          case PacketImpl.REPLICATION_SYNC_FILE: {

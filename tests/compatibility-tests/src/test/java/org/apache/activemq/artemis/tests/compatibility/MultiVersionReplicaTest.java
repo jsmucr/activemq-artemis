@@ -38,6 +38,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 import static org.apache.activemq.artemis.tests.compatibility.GroovyRun.SNAPSHOT;
+import static org.apache.activemq.artemis.tests.compatibility.GroovyRun.TWO_EIGHTEEN_ZERO;
+import static org.apache.activemq.artemis.tests.compatibility.GroovyRun.TWO_SEVENTEEN_ZERO;
 import static org.apache.activemq.artemis.tests.compatibility.GroovyRun.TWO_TWENTYTWO_ZERO;
 
 @RunWith(Parameterized.class)
@@ -58,7 +60,13 @@ public class MultiVersionReplicaTest extends ClasspathBase {
       List<Object[]> combinations = new ArrayList<>();
       combinations.add(new Object[]{TWO_TWENTYTWO_ZERO, SNAPSHOT});
       combinations.add(new Object[]{SNAPSHOT, TWO_TWENTYTWO_ZERO});
-      // The SNAPSHOT/SNAPSHOT is here as a teest validation only, like in other cases where SNAPSHOT/SNAPSHOT is used.
+      // notice I'm not adding the opposite configuration on purpose
+      // for some old bug later fixed, it was not possible to have main on SNAPSHOT and replica on 2.17
+      // this is not something we wanted to have anyways as you always move forward.
+      // in theory it should work, but this test is hitting some old bug on the compactor at 2.17 and it was not worth investigating it further anyways.
+      combinations.add(new Object[]{TWO_SEVENTEEN_ZERO, SNAPSHOT});
+      combinations.add(new Object[]{TWO_EIGHTEEN_ZERO, SNAPSHOT});
+      // The SNAPSHOT/SNAPSHOT is here as a test validation only, like in other cases where SNAPSHOT/SNAPSHOT is used.
       combinations.add(new Object[]{SNAPSHOT, SNAPSHOT});
       return combinations;
    }
