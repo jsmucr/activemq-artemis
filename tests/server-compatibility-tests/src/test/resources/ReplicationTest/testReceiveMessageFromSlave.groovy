@@ -40,7 +40,7 @@ ServerLocatorImpl.newLocator("tcp://${slaveBindAddress}:${slaveBindPort}").withC
             os.withCloseable {
                message.saveToOutputStream(it)
             }
-            println "Received message \"${os.toString()}\" with ID ${message.messageID} from the slave server."
+            println "Received message \"${os.toString()}\" with ID ${message.messageID} from the \"${server.configuration.name}\" server."
             assertEquals("Message received from \"${server.configuration.name}\" doesn\'t match.", replicationTestString, os.toString())
          }
          session.commit()

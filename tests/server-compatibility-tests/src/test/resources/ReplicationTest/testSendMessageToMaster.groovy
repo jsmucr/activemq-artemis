@@ -39,7 +39,7 @@ ServerLocatorImpl.newLocator("tcp://${masterBindAddress}:${masterBindPort}").wit
          session.createProducer(replicationTestQueueName as String).withCloseable { producer ->
             ClientMessage message = session.createMessage(true)
             message.writeBodyBufferBytes(replicationTestString.bytes)
-            println "Sending message \"${replicationTestString}\" to the master server ..."
+            println "Sending message \"${replicationTestString}\" to the \"${server.configuration.name}\" server ..."
             producer.send(message)
          }
       }
